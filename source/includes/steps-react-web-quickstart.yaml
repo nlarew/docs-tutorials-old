@@ -1,4 +1,79 @@
-title: Create a New React App
-ref: create-a-new-react-app
+title: Set up a New React App
+ref: set-up-a-new-react-app
 level: 4
 content: |
+  Generate a new application template using `create-react-app
+  <https://create-react-app.dev/>`__:
+
+  .. code-block:: shell
+     
+     npx create-react-app realm-react-quickstart
+
+  Navigate into the new app and install the ``realm-web`` package:
+
+  .. code-block:: shell
+     
+     cd realm-react-quickstart
+     yarn add realm-web
+
+  Once installation is complete, open ``/src/App.js`` and delete all of the
+  contents.
+---
+title: Import Dependencies
+ref: import-dependencies
+level: 4
+content: |
+  .. code-block:: javascript
+     
+     import React from "react";
+     import * as Realm from "realm-web";
+     import "./App.css";
+---
+title: Connect to Your Realm App
+ref: connect-to-your-realm-app
+level: 4
+content: |
+  .. code-block:: shell
+     
+     const REALM_APP_ID = "myapp-abcde";
+     const app = new Realm.App({ id: REALM_APP_ID });
+---
+title: Create React Components
+ref: create-react-components
+level: 4
+content: |
+  .. code-block:: javascript
+     
+     // Create a component that logs in an anonymous user
+     function Login({ setUser }) {
+       const loginAnonymous = async () => {
+         const user = await app.logIn(Realm.Credentials.anonymous());
+         setUser(user);
+       };
+       return <button onClick={loginAnonymous}>Log In</button>;
+     }
+     
+     // Create a component that display the user's details
+     function UserDetail({ user }) {
+       return (
+         <div>
+           <h1>Logged in with anonymous id: {user.id}</h1>
+         </div>
+       );
+     }
+---
+title: Create and Export the App Component
+ref: create-and-export-the-app-component
+level: 4
+content: |
+  .. code-block:: javascript
+     
+     export default function App() {
+       const [user, setUser] = React.useState(app.currentUser);
+       return (
+         <div className="App">
+           {user ? <UserDetail user={user} /> : <Login setUser={setUser} />}
+         </div>
+       );
+     }
+...
