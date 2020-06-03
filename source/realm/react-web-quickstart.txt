@@ -14,8 +14,8 @@
      The `create-react-app
      <https://create-react-app.dev/docs/getting-started/>`__ documentation
      recommends that you install `npx <https://www.npmjs.com/package/npx>`__ to
-     run ``create-react-app`` rather than using a version of
-     ``create-react-app`` that's installed on your machine.
+     run ``create-react-app`` rather than using a version that's installed on
+     your machine.
    procedure:
      .. include:: /includes/steps/react-web-quickstart.rst
    summary:
