@@ -8,9 +8,14 @@
      connects to your MongoDB Realm app and authenticates an anonymous user.
    time: 10
    check_your_environment:
-     To create and run t his application you will need :npm:`npm <>` installed
-     on your machine. We also recommend that you install :npm:`npx
-     </package/npx>` to run ``create-react-app``.
+     To create and run this application you will need `npm
+     <https://www.npmjs.com/>`__ installed on your machine.
+     
+     The `create-react-app
+     <https://create-react-app.dev/docs/getting-started/>`__ documentation
+     recommends that you install `npx <https://www.npmjs.com/package/npx>`__ to
+     run ``create-react-app`` rather than using a version of
+     ``create-react-app`` that's installed on your machine.
    procedure:
      .. include:: /includes/steps/react-web-quickstart.rst
    summary:
