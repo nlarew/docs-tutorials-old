@@ -85,6 +85,7 @@ extlinks = {
     'java-sync-api': ('http://mongodb.github.io/mongo-java-driver/3.7/javadoc/%s', ''),
     'atlas': ('https://docs.atlas.mongodb.com%s', ''),
     'stitch': ('https://docs.mongodb.com/stitch%s', ''),
+    'npm': ('https://www.npmjs.com/%s', ''),
 }
 
 intersphinx_mapping = {}
